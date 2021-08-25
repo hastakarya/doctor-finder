@@ -44,15 +44,57 @@
     border-radius: 0.3rem;
 }
 
-.search-specialization {
+.search-multiselect {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px 5px 5px 5px;
     margin-right: 10px !important;
-    width: 200px;
+    min-width: 200px;
     border: gray solid 1.5px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     outline: 2px solid transparent;
     outline-offset: 2px;
     border-radius: 0.3rem;
+}
+
+.dd-menu-multiselect {
+    position: absolute;
+    display: none;
+    margin-top: 35px !important;
+    top: 0;
+    width: 90%;
+    padding: 5px;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3em;
+  }
+
+  .dd-list {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .list-label {
+    display: inline-block;
+    margin-left: 5px !important;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+.list-multiselect {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+.dd-multiselect {
+    margin-left: 5px !important;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
 }
 
 /* Cards */
@@ -86,12 +128,12 @@
 }
 
 .card-dr-name {
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0px 0px 0px;
     font-weight: 800;
 }
 
 .card-dr-spec {
-    padding: 5px 0px 5px 0px;
+    padding: 2px 0px 8px 0px;
     font-weight: 800;
     font-size: 14px;
 }

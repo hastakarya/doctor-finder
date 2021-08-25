@@ -1,19 +1,19 @@
 <template>
     <div class="grid">
-        <div class="card" v-for="i in 50" :key="i">
+        <div class="card" v-for="list in doctors.data" :key="list.doctor_id">
             <div class="card-img">
-                <img src="https://cms-bucket-alteacare.s3.ap-southeast-1.amazonaws.com/dr_Jasmine_Iskandar_Sp_OG_edc4118ef1.png" alt="">
+                <img :src="list.photo.url" :alt="list.slug">
             </div>
             <div class="card-body">
                 <div class="card-info">
-                    <p class="card-dr-name">Jasmine</p>
-                    <p class="card-dr-spec">Mitra Keluarga Bintaro - Dokter Spesialis Kebidanan & Kandungan</p>
+                    <p class="card-dr-name">{{ list.name }}</p>
+                    <p class="card-dr-spec"> {{ `${list.hospital[0].name} - ${list.specialization.name}`  }} </p>
                     <div class="card-about">
-                        <p><span style="background-color:rgb(255,255,255);color:rgb(0,0,0);">&nbsp;dr. Jasmine Iskandar,Sp.OG adalah&nbsp;Dokter&nbsp;Spesialis Penyakit Kebidanan dan Kandungan&nbsp;yang&nbsp;telah&nbsp;menyelesaikan&nbsp;pendidikan&nbsp;di Universitas Indonesia. Beliau dapat memberikan&nbsp;pelayanan&nbsp;medis&nbsp;/&nbsp;konsultasi&nbsp;terkait&nbsp;kondisi penyakit kebidanan dan kandungan.&nbsp;</span></p>
+                        <p v-html="list.about_preview"></p>
                     </div>
                 </div>
                 <div class="card-info-price">
-                    <p>Rp 10.000.000</p>
+                    <p>{{ list.price.formatted }}</p>
                 </div>
             </div>
         </div>
@@ -21,7 +21,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-    
+    computed: {
+        ...mapGetters(["doctors"])
+    }
 }
 </script>

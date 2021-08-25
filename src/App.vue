@@ -8,6 +8,7 @@
 <script>
 import Filter from './components/Filter.vue'
 import Card from './components/Card.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -15,12 +16,13 @@ export default {
     Filter,
     Card
   },
-  data() {
-    return {
-      hospital: {},
-      specialization: {},
-      
-    }
+
+  methods: {
+    ...mapActions(["fetchDoctors"])
+  },
+
+  mounted() {
+    this.fetchDoctors()
   }
 }
 </script>
