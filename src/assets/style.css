@@ -1,0 +1,109 @@
+* {
+    margin: 0 !important;
+}
+/* Filter */
+.filter-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 20px 30px;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.filter-body h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.filter-input {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px 10px 0px;
+}
+
+.search {
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px !important;
+    width: 200px;
+    border: gray solid 1.5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 0.3rem;
+}
+
+.search-hospital {
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px !important;
+    width: 200px;
+    border: gray solid 1.5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 0.3rem;
+}
+
+.search-specialization {
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px !important;
+    width: 200px;
+    border: gray solid 1.5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 0.3rem;
+}
+
+/* Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 50px;
+    row-gap: 30px;
+    margin-top: 50px !important;
+    overflow-y: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.card-img img {
+    max-width: 150px;
+}
+
+.card-body {
+    width: 100%;
+    margin-left: 30px !important;
+    padding: 10px;
+}
+
+.card-dr-name {
+    padding: 5px 0px 5px 0px;
+    font-weight: 800;
+}
+
+.card-dr-spec {
+    padding: 5px 0px 5px 0px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.card-about p {
+    font-size: 13px;
+}
+
+.card-info-price {
+    padding: 10px 0px 10px 0px;
+}
+
+.card-info-price p {
+    text-align: right;
+}
