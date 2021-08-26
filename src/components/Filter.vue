@@ -4,7 +4,7 @@
           <h1>Doctor Finder</h1>
       </div>
       <div class="filter-input">
-          <input @input="search" class="search" v-model="search_input" type="text" placeholder="Search...">
+          <input @input="search" class="search" v-model="search_input" type="text" placeholder="Search doctor name...">
 
           <div class="search-multiselect">
             <div class="search-multiselect-list">
@@ -79,6 +79,7 @@ export default {
   },
 
   methods: {
+    // Dropdown control
     dd(id) {
       if ($("#" + id + "-dd-arrow:visible").length == 0) {
         $("#" + id + "-dd-arrow").css("display", "inline-block")
@@ -94,6 +95,7 @@ export default {
       return value.replace('&','').toLowerCase().split(' ').join('')
     },
 
+    // Find specialization to use in filter
     setListSpec() {
       let doctors = this.doctors.data
       for(let i=0; i < doctors.length; i++) {
@@ -101,6 +103,7 @@ export default {
       }
     },
 
+    // Find hospital to use in filter
     setListHospital() {
       let doctors = this.doctors.data
       for(let i=0; i < doctors.length; i++) {
@@ -110,8 +113,9 @@ export default {
       }
     },
 
+    // Filter method
     fetchData() {
-      this.$store.dispatch('fetchDoctors', {
+      this.$store.dispatch('filterDoctors', {
           search: this.search_input,
           hospital: this.hospital,
           specialization: this.specialization
@@ -124,12 +128,14 @@ export default {
   },
 
   created() {
+    // Delay input filter by 500 milisecond
     this.search = debounce(() => {
         this.fetchData()
     }, 500);
   },
 
   watch: {
+    // Run method after data in doctors is changes
     doctors: function() {
       this.setListSpec()
       this.setListHospital()
